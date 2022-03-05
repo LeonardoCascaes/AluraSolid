@@ -1,17 +1,18 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Alura.LeilaoOnline.WebApp.Dados;
 using Alura.LeilaoOnline.WebApp.Models;
 using System;
+using Alura.LeilaoOnline.WebApp.Dados;
 
 namespace Alura.LeilaoOnline.WebApp.Controllers
 {
     public class LeilaoController : Controller
     {
-        private readonly LeilaoDao _leilaoDao;
-        public LeilaoController()
+        private readonly ILeilaoDao _leilaoDao;
+
+        public LeilaoController(ILeilaoDao leilaoDao)
         {
-            _leilaoDao = new LeilaoDao();
+            _leilaoDao = leilaoDao;
         }
 
         public IActionResult Index()
