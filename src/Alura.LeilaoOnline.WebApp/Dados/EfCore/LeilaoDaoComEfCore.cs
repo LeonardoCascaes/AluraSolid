@@ -42,10 +42,5 @@ namespace Alura.LeilaoOnline.WebApp.Dados.EfCore
             _context.Leiloes.Remove(leilao);
             _context.SaveChanges();
         }
-
-        public IEnumerable<Categoria> BuscarCategorias()
-        {
-            return _context.Categorias.ToList();
-        }
     }
 }
