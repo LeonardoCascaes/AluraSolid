@@ -7,7 +7,7 @@ namespace Alura.LeilaoOnline.WebApp.Services.Handlers
 {
     public class ArquivamentoAdminService : IAdminService
     {
-        IAdminService _defaultService;
+        private readonly IAdminService _defaultService;
 
         public ArquivamentoAdminService(ILeilaoDao leilaoDao, ICategoriaDao categoriaDao)
         {
