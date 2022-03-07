@@ -60,24 +60,11 @@ namespace Alura.LeilaoOnline.WebApp.Services.Handlers
             return _defaultService.ConsultaLeilaoPorId(id);
         }
 
-        public void CadastraCategoria(Categoria categoria)
-        {
-            _defaultService.CadastraCategoria(categoria);
-        }
 
         public Categoria ConsultaCategoriaPorId(int id)
         {
             return _defaultService.ConsultaCategoriaPorId(id);
         }
 
-        public void ModificaCategoria(Categoria categoria)
-        {
-            _defaultService.ModificaCategoria(categoria);
-        }
-
-        public void RemoveCategoria(Categoria categoria)
-        {
-            _defaultService.RemoveCategoria(categoria);
-        }
     }
 }

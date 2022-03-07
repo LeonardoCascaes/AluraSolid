@@ -20,7 +20,7 @@ namespace Alura.LeilaoOnline.WebApp.Dados.EfCore
             _context.SaveChanges();
         }
 
-        public IEnumerable<Leilao> BuscarLeiloes()
+        public IEnumerable<Leilao> BuscarTodos()
         {
             return _context.Leiloes
                 .Include(l => l.Categoria);
@@ -37,7 +37,7 @@ namespace Alura.LeilaoOnline.WebApp.Dados.EfCore
             _context.SaveChanges();
         }
 
-        public void Excluir(Leilao leilao)
+        public void Remover(Leilao leilao)
         {
             _context.Leiloes.Remove(leilao);
             _context.SaveChanges();

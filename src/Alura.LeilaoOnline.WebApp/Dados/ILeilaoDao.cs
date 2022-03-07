@@ -1,14 +1,8 @@
 ﻿using Alura.LeilaoOnline.WebApp.Models;
-using System.Collections.Generic;
 
 namespace Alura.LeilaoOnline.WebApp.Dados
 {
-    public interface ILeilaoDao
+    public interface ILeilaoDao : ICommand<Leilao>, IQuery<Leilao>
     {
-        void Alterar(Leilao leilao);
-        IEnumerable<Leilao> BuscarLeiloes();
-        Leilao BuscarPorId(int id);
-        void Excluir(Leilao leilao);
-        void Incluir(Leilao leilao);
     }
 }

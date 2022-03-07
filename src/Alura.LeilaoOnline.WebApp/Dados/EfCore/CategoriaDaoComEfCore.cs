@@ -1,4 +1,5 @@
 ﻿using Alura.LeilaoOnline.WebApp.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 namespace Alura.LeilaoOnline.WebApp.Dados.EfCore
@@ -12,32 +13,17 @@ namespace Alura.LeilaoOnline.WebApp.Dados.EfCore
             _context = new AppDbContext();
         }
 
-        public void Incluir(Categoria categoria)
+        public IEnumerable<Categoria> BuscarTodos()
         {
-            _context.Categorias.Add(categoria);
-            _context.SaveChanges();
-        }
-
-        public IEnumerable<Categoria> BuscarCategorias()
-        {
-            return _context.Categorias.ToList();
+            return _context.Categorias
+                            .Include(c => c.Leiloes);
         }
 
         public Categoria BuscarPorId(int id)
         {
-            return _context.Categorias.FirstOrDefault(c => c.Id == id);
-        }
-
-        public void Alterar(Categoria categoria)
-        {
-            _context.Update(categoria);
-            _context.SaveChanges();
-        }
-
-        public void Excluir(Categoria categoria)
-        {
-            _context.Remove(categoria);
-            _context.SaveChanges();
+            return _context.Categorias
+                            .Include(c => c.Leiloes)
+                            .First(c => c.Id == id);
         }
     }
 }

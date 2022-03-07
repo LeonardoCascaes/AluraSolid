@@ -5,11 +5,8 @@ namespace Alura.LeilaoOnline.WebApp.Services
 {
     public interface IAdminService
     {
-        void CadastraCategoria(Categoria categoria);
         Categoria ConsultaCategoriaPorId(int id);
         IEnumerable<Categoria> ConsultaCategorias();
-        void ModificaCategoria(Categoria categoria);
-        void RemoveCategoria(Categoria categoria);
         void CadastraLeilao(Leilao leilao);
         Leilao ConsultaLeilaoPorId(int id);
         IEnumerable<Leilao> ConsultaLeiloes();
